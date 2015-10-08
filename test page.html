@@ -2,80 +2,66 @@
 <html lang ="en">
 <head>
   <meta charset="utf-8">
-  <title>Jason</title>
+  <title>Jason's Test Page</title>
   <style>
     body {
       text-align: center;
       background: url("http://i.imgur.com/iyEffRR.jpg");
       background-size: cover;
-      background-position: center;
       font-family: helvetica;
+      color: white;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    h1 {
+     font-size: 25px;
     }
     p {
-      font-size: 22px;
-      color:white;
+      font-size: 16px;
+      line-height: 30px;
       border: 0;
-      padding: 10px;
+      padding: 0 5px;
       
     }
-    input {
-      border: 0;
-      padding: 10px;
-      font-size: 18px;
+    img {
+      margin: 10px 0px 0px 10px;
+      border: 7px solid white;
+      border-radius: 20px;
     }
-    input[type="submit"] {
-      background: red;
-      color: white;
+    div{
+      background: black;
+      background: rgba(0,0,0,0.7);
+      padding: 10px;
+      border-radius: 20px;
+    }
+    button{
+      margin: 15px;
+      padding: 10px;
+      border-radius: 8px;
     }
   </style>
+   <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+   <script src="DnDcharacterGenerator.js"></script>
 </head>
 <body>
   <img src="http://i.imgur.com/uwN531yb.jpg">
-  <p>Hi! I'm Jason, a NJ-based Programmer. Say hello!</p>
-  <p>This is a test page! Working on HTML/CSS.</p>
+  <div>
+    <h1><strong>Jason's test page</strong></h1>
+  <p>This is a test page! Working on HTML/CSS/JS. <br>I have a couple of projects Im working on, like those below!</p>
+  </div>
   <a href="http://www.instructables.com/id/Portable-PC-project-inspired-by-Shadowrun-Cyberdec/"><img src="http://i.imgur.com/WZ8ACDem.jpg"></a>
-  <p>This is one of my projects, a custom PC case!</p> 
-  <p>Click on the image to take a look!</p>
-  <input type="email" placeholder="Your email">
-  <input type="submit">
-
-  <div id="rating-container">
-  <div class="rating-circle"></div>
-  <div class="rating-circle"></div>
-  <div class="rating-circle"></div>
-  <div class="rating-circle"></div>
-  <div class="rating-circle"></div>
- </div>
-
- <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+  <div>
+    <p>This is one of my projects, a custom PC case! Click on the image above to take a look at the Instructable! <br>Below is another one, a D&D character generator!</p>
+  </div>
+ <button type="button">Click to generate a D&D character!</button>
 
  <script>
 //Run on page load
    $(function () {
-      //Recognize mousehover, turn hovered Yellow and ones to left
-     $('.rating-circle').hover(function () {
-        $(this).addClass('rating-hover');
-        $(this).prevAll().addClass('rating-hover');
-       //Remove Green temporarily
-       $('.rating-circle').removeClass('rating-chosen');
-});
-     //Remove ONLY Yellow when not hover
-     $('.rating-circle').mouseout(function() {
-        $('.rating-circle').removeClass('rating-hover');
-       //turn Green the previously clicked and left circles
-       $('#chosen').addClass('rating-chosen');
-       $('#chosen').prevAll().addClass('rating-chosen');
-       
-});
-     //turn chosen Green when clicked, also circles to left
-     $('.rating-circle').click(function () {
-        $(this).addClass('rating-chosen');
-        $(this).prevAll().addClass('rating-chosen');
-       //undo previous choices
-       $('.rating-circle').removeAttr('id');
-       //store the chosen value
-       $(this).attr('id', 'chosen');
-});
+      $("button").on("click", function () {
+      alert(charGen());
+      });
    });
    
  </script>
