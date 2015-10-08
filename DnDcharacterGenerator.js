@@ -1,3 +1,4 @@
+function charGen(){
 //A Quick DnD 5th edition Character generator
 var character = {};
 //random adjective, for fun
@@ -407,5 +408,5 @@ switch(Math.floor((Math.random() * 13)+1)){
   break;
 }
 
-//for now console.log, replace with return and call as a function in Full
-console.log("I am a"+" "+character.adj+" "+character.subRace+character.Race+". "+"I fight as a"+" "+character.Spec+" "+character.Class+". "+"I was a"+" "+character.Background);
+return("I am a"+" "+character.adj+" "+character.subRace+character.Race+". "+"I fight as a"+" "+character.Spec+" "+character.Class+". "+"I was a"+" "+character.Background);
+}
