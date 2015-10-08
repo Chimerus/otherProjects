@@ -37,7 +37,7 @@ switch(Math.floor((Math.random() * 9)+1)){
       break;
     case 5:
       character.Race = "Dragonborn";
-      var roll=Math.floor((Math.random() * 10)+1);
+         roll=Math.floor((Math.random() * 10)+1);
       if (roll==1){
         character.subRace = "Black ";
       } else if (roll == 2){
@@ -62,7 +62,7 @@ switch(Math.floor((Math.random() * 9)+1)){
       break;
     case 6:
       character.Race = "Gnome";
-      var roll=Math.floor((Math.random() * 3)+1);
+         roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
         character.subRace = "Tinker ";
       } else if (roll == 2){
@@ -83,6 +83,7 @@ switch(Math.floor((Math.random() * 9)+1)){
       character.Race = "Tiefling"; 
       character.subRace ="";    
 }
+
 
 //random Class
 //adding Spec for main "path" of class, the big option they get.
@@ -105,7 +106,7 @@ switch(Math.floor((Math.random() * 12)+1)){
       break;
     case 3:
       character.Class = "Cleric";
-        var roll=Math.floor((Math.random() * 7)+1);
+           roll=Math.floor((Math.random() * 7)+1);
           if (roll==1){
         character.Spec = "Knowledge Domain";
       } else if (roll == 2){
@@ -132,7 +133,7 @@ switch(Math.floor((Math.random() * 12)+1)){
       break;
     case 5:
       character.Class = "Fighter";
-      var roll=Math.floor((Math.random() * 3)+1);
+         roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
         character.Spec = "Champion";
       } else if (roll == 2){
@@ -143,7 +144,7 @@ switch(Math.floor((Math.random() * 12)+1)){
       break;
     case 6:
       character.Class = "Monk";
-     var roll=Math.floor((Math.random() * 3)+1);
+        roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
         character.Spec = "Way of the Open Hand";
       } else if (roll == 2){
@@ -154,7 +155,7 @@ switch(Math.floor((Math.random() * 12)+1)){
       break;
     case 7:
       character.Class = "Paladin";
-      var roll=Math.floor((Math.random() * 3)+1);
+         roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
         character.Spec = "Oath of Devotion";
       } else if (roll == 2){
@@ -173,7 +174,7 @@ switch(Math.floor((Math.random() * 12)+1)){
       break;
     case 9:
       character.Class = "Rogue";
-        var roll=Math.floor((Math.random() * 4)+1);
+           roll=Math.floor((Math.random() * 4)+1);
       if (roll==1){
         character.Spec = "Thief";
       } else if (roll == 2){
@@ -186,7 +187,7 @@ switch(Math.floor((Math.random() * 12)+1)){
     break;
     case 10:
       character.Class ="Sorcerer";
-       var roll=Math.floor((Math.random() * 3)+1);
+          roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
         character.Spec = "Draconic Bloodline";
       } else if (roll == 2){
@@ -197,7 +198,7 @@ switch(Math.floor((Math.random() * 12)+1)){
       break;
     case 11:
       character.Class ="Wizard";
-        var roll=Math.floor((Math.random() * 8)+1);
+           roll=Math.floor((Math.random() * 8)+1);
       if (roll==1){
         character.Spec = "Abjuration";
       } else if (roll == 2){
@@ -218,7 +219,7 @@ switch(Math.floor((Math.random() * 12)+1)){
       break;
     case 12:
       character.Class = "Warlock";
-        var roll=Math.floor((Math.random() * 3)+1);
+           roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
         character.Spec = "Archfey Patron";
       } else if (roll == 2){
@@ -226,20 +227,20 @@ switch(Math.floor((Math.random() * 12)+1)){
       } else {
         character.Spec = "Great Old One Patron";
       }
-    }
+}
 
 //random background
 //specialization or variant rolled in
 switch(Math.floor((Math.random() * 13)+1)){
   case 1:
-    character.Background = "Acolyte";
+  character.Background = "Acolyte";
   break;
   case 2:
-    character.Background = "Charlatan";
+  character.Background = "Charlatan";
   break;
   case 3:
-    character.Background = "Criminal";
-    var roll=Math.floor((Math.random() * 8)+1);
+  character.Background = "Criminal";
+    roll=Math.floor((Math.random() * 8)+1);
     if (roll==1){
         character.Background += "- Blackmailer";
       } else if (roll == 2){
@@ -261,7 +262,7 @@ switch(Math.floor((Math.random() * 13)+1)){
   case 4:
       if (Math.floor((Math.random() * 2)+1)==1){
         character.Background = "Entertainer";   
-      var roll=Math.floor((Math.random() * 10)+1);
+         roll=Math.floor((Math.random() * 10)+1);
       if (roll==1){
         character.Background += "- Actor";
       } else if (roll == 2){
@@ -288,10 +289,10 @@ switch(Math.floor((Math.random() * 13)+1)){
       }
   break;
   case 5:
-    character.Background = "Folk Hero";
+  character.Background = "Folk Hero";
   break;
   case 6:
-    if (Math.floor((Math.random() * 2)+1)==1){
+  if (Math.floor((Math.random() * 2)+1)==1){
         character.Background = "Guild Artisan";
       } else {
          character.Background = "Guild Merchant";
@@ -309,7 +310,7 @@ switch(Math.floor((Math.random() * 13)+1)){
   break;
   case 9:
     character.Background = "Outlander";
-    var roll=Math.floor((Math.random() * 10)+1);
+       roll=Math.floor((Math.random() * 10)+1);
       if (roll==1){
         character.Background += "- Forester";
       } else if (roll == 2){
@@ -333,8 +334,8 @@ switch(Math.floor((Math.random() * 13)+1)){
         }
   break;  
   case 10:
-    character.Background = "Sage";
-    var roll=Math.floor((Math.random() * 8)+1);
+  character.Background = "Sage";
+      roll=Math.floor((Math.random() * 8)+1);
       if (roll==1){
         character.Background += "- Alchemist";
       } else if (roll == 2){
@@ -361,8 +362,8 @@ switch(Math.floor((Math.random() * 13)+1)){
       }
   break;
   case 12:
-    character.Background = "Soldier";
-     var roll=Math.floor((Math.random() * 8)+1);
+  character.Background = "Soldier";
+      roll=Math.floor((Math.random() * 8)+1);
       if (roll==1){
         character.Background += "- Officer";
       } else if (roll == 2){
@@ -382,7 +383,7 @@ switch(Math.floor((Math.random() * 13)+1)){
       }
   break;
   case 13:
-    character.Background = "Urchin";
+  character.Background = "Urchin";
   break;
 }
 
