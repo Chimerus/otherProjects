@@ -1,34 +1,86 @@
 //A Quick DnD 5th edition Character generator
 var character = {};
 
-//random Race
+//random Race, subRace has extra space after it so it prints properly
 switch(Math.floor((Math.random() * 9)+1)){
     case 1:
       character.Race = "Dwarf";
+      if (Math.floor((Math.random() * 2)+1)==1){
+        character.subRace = "Mountain ";
+      } else {
+        character.subRace = "Hill ";
+      }
       break;
     case 2:
       character.Race = "Elf";
+      var roll=Math.floor((Math.random() * 3)+1);
+      if (roll==1){
+        character.subRace = "High ";
+      } else if (roll == 2){
+        character.subRace = "Wood ";
+      } else {
+        character.subRace = "Drow ";
+      }
       break;
     case 3:
       character.Race = "Halfling";
+      if (Math.floor((Math.random() * 2)+1)==1){
+        character.subRace = "Lightfoot ";
+      } else {
+        character.subRace = "Stout ";
+      }
       break;
     case 4:
       character.Race = "Human";
+      character.subRace ="";
       break;
     case 5:
       character.Race = "Dragonborn";
+      var roll=Math.floor((Math.random() * 10)+1);
+      if (roll==1){
+        character.subRace = "Black ";
+      } else if (roll == 2){
+        character.subRace = "Blue ";
+      } else if (roll == 3){
+        character.subRace = "Brass ";
+      } else if (roll == 4){
+        character.subRace = "Bronze ";
+      } else if (roll == 5) {
+        character.subRace ="Copper ";
+      } else if (roll == 6) {
+        character.subRace = "Gold ";
+      } else if (roll == 7) {
+        character.subRace = "Green ";
+      } else if (roll == 8) {
+        character.subRace = "Red ";
+      } else if (roll == 9) {
+        character.subRace = "Silver ";
+      } else {
+        character.subRace = "White ";
+      }
       break;
     case 6:
       character.Race = "Gnome";
+      var roll=Math.floor((Math.random() * 3)+1);
+      if (roll==1){
+        character.subRace = "Tinker ";
+      } else if (roll == 2){
+        character.subRace = "Forest ";
+      } else {
+        character.subRace = "Rock ";
+      }
       break;
     case 7:
       character.Race = "Half-Elf";
+      character.subRace ="";
       break;
     case 8:
       character.Race = "Half-Orc";
+      character.subRace ="";
       break;
     case 9:
-      character.Race = "Tiefling";     
+      character.Race = "Tiefling"; 
+      character.subRace ="";    
 }
 
 
@@ -115,4 +167,4 @@ switch(Math.floor((Math.random() * 13)+1)){
 }
 
 //for now console.log, replace with return and call as a function in Full
-console.log("You are a"+" "+character.Race+" "+character.Class+" "+"whose background is"+" "+character.Background);
+console.log("You are a"+" "+character.subRace+character.Race+" "+character.Class+" "+"whose background is"+" "+character.Background);
