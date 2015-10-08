@@ -84,7 +84,6 @@ switch(Math.floor((Math.random() * 9)+1)){
       character.subRace ="";    
 }
 
-
 //random Class
 //adding Spec for main "path" of class, the big option they get.
 switch(Math.floor((Math.random() * 12)+1)){
@@ -233,14 +232,14 @@ switch(Math.floor((Math.random() * 12)+1)){
 //specialization or variant rolled in
 switch(Math.floor((Math.random() * 13)+1)){
   case 1:
-  character.Background = "Acolyte";
+    character.Background = "Acolyte";
   break;
   case 2:
-  character.Background = "Charlatan";
+    character.Background = "Charlatan";
   break;
   case 3:
-  character.Background = "Criminal";
- var roll=Math.floor((Math.random() * 8)+1);
+    character.Background = "Criminal";
+    var roll=Math.floor((Math.random() * 8)+1);
     if (roll==1){
         character.Background += "- Blackmailer";
       } else if (roll == 2){
@@ -289,10 +288,10 @@ switch(Math.floor((Math.random() * 13)+1)){
       }
   break;
   case 5:
-  character.Background = "Folk Hero";
+    character.Background = "Folk Hero";
   break;
   case 6:
-  if (Math.floor((Math.random() * 2)+1)==1){
+    if (Math.floor((Math.random() * 2)+1)==1){
         character.Background = "Guild Artisan";
       } else {
          character.Background = "Guild Merchant";
@@ -334,8 +333,8 @@ switch(Math.floor((Math.random() * 13)+1)){
         }
   break;  
   case 10:
-  character.Background = "Sage";
-   var roll=Math.floor((Math.random() * 8)+1);
+    character.Background = "Sage";
+    var roll=Math.floor((Math.random() * 8)+1);
       if (roll==1){
         character.Background += "- Alchemist";
       } else if (roll == 2){
@@ -362,7 +361,7 @@ switch(Math.floor((Math.random() * 13)+1)){
       }
   break;
   case 12:
-  character.Background = "Soldier";
+    character.Background = "Soldier";
      var roll=Math.floor((Math.random() * 8)+1);
       if (roll==1){
         character.Background += "- Officer";
@@ -383,7 +382,7 @@ switch(Math.floor((Math.random() * 13)+1)){
       }
   break;
   case 13:
-  character.Background = "Urchin";
+    character.Background = "Urchin";
   break;
 }
 
