@@ -71,6 +71,48 @@ switch(Math.floor((Math.random() * 12)+1)){
       character.Class = "Warlock";
 }
 
-console.log(character);
 //random background
+switch(Math.floor((Math.random() * 13)+1)){
+  case 1:
+  character.Background = "Acolyte";
+  break;
+  case 2:
+  character.Background = "Charlatan";
+  break;
+  case 3:
+  character.Background = "Criminal";
+  break;
+  case 4:
+  character.Background = "Entertainer";
+  break;
+  case 5:
+  character.Background = "Folk Hero";
+  break;
+  case 6:
+  character.Background = "Guild Artisan";
+  break;
+  case 7:
+  character.Background = "Hermit";
+  break;
+  case 8:
+  character.Background = "Noble";
+  break;
+  case 9:
+  character.Background = "Outlander";
+  break;  
+  case 10:
+  character.Background = "Sage";
+  break;
+  case 11:
+  character.Background = "Sailor";
+  break;
+  case 12:
+  character.Background = "Soldier";
+  break;
+  case 13:
+  character.Background = "Urchin";
+  break;
+}
 
+//for now console.log, replace with return and call as a function in Full
+console.log("You are a"+" "+character.Race+" "+character.Class+" "+"whose background is"+" "+character.Background);
