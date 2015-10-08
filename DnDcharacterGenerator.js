@@ -1,6 +1,26 @@
 //A Quick DnD 5th edition Character generator
 var character = {};
-
+//random adjective, for fun
+var roll=Math.floor((Math.random() * 6)+1);
+switch(roll){
+    case 1:
+      character.adj = "Fearless";
+      break;
+    case 2:
+      character.adj = "Eloquent";
+      break;
+    case 3:
+      character.adj = "Cunning";
+      break;
+    case 4:
+      character.adj = "Friendly";
+      break;
+    case 5:
+      character.adj = "Stoic";
+      break;
+    case 6:
+      character.adj = "Reckless";
+    }
 //random Race, subRace has extra space after it so it prints properly
 //subrace seperated out so can be expanded on in future
 switch(Math.floor((Math.random() * 9)+1)){
@@ -14,7 +34,7 @@ switch(Math.floor((Math.random() * 9)+1)){
       break;
     case 2:
       character.Race = "Elf";
-      var roll=Math.floor((Math.random() * 3)+1);
+          roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
         character.subRace = "High ";
       } else if (roll == 2){
@@ -383,9 +403,9 @@ switch(Math.floor((Math.random() * 13)+1)){
       }
   break;
   case 13:
-  character.Background = "Urchin";
+  character.Background = "Street Urchin";
   break;
 }
 
 //for now console.log, replace with return and call as a function in Full
-console.log("I am a"+" "+character.subRace+character.Race+". "+"I fight as a"+" "+character.Spec+" "+character.Class+". "+"I was a"+" "+character.Background);
+console.log("I am a"+" "+character.adj+" "+character.subRace+character.Race+". "+"I fight as a"+" "+character.Spec+" "+character.Class+". "+"I was a"+" "+character.Background);
