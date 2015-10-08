@@ -2,6 +2,7 @@
 var character = {};
 
 //random Race, subRace has extra space after it so it prints properly
+//subrace seperated out so can be expanded on in future
 switch(Math.floor((Math.random() * 9)+1)){
     case 1:
       character.Race = "Dwarf";
@@ -85,45 +86,151 @@ switch(Math.floor((Math.random() * 9)+1)){
 
 
 //random Class
+//adding Spec for main "path" of class, the big option they get.
 switch(Math.floor((Math.random() * 12)+1)){
     case 1:
       character.Class= "Barbarian";
+         if (Math.floor((Math.random() * 2)+1)==1){
+        character.Spec = "Path of the Berserker";
+      } else {
+        character.Spec = "Path of the Totem Warrior";
+      }
       break;
     case 2:
       character.Class = "Bard";
+         if (Math.floor((Math.random() * 2)+1)==1){
+        character.Spec = "College of Valor";
+      } else {
+        character.Spec = "College of Lore";
+      }
       break;
     case 3:
       character.Class = "Cleric";
+        var roll=Math.floor((Math.random() * 7)+1);
+          if (roll==1){
+        character.Spec = "Knowledge Domain";
+      } else if (roll == 2){
+        character.Spec = "Life Domain";
+      } else if (roll == 3){
+        character.Spec = "Light Domain";
+      } else if (roll == 4){
+        character.Spec = "Nature Domain";
+      } else if (roll == 5) {
+        character.Spec ="Tempest Domain";
+      } else if (roll == 6) {
+        character.Spec = "Trickery Domain";
+      } else {
+        character.Spec = "War Domain";
+      }
       break;
     case 4:
       character.Class = "Druid";
+      if (Math.floor((Math.random() * 2)+1)==1){
+        character.Spec = "Circle of the Moon";
+      } else {
+        character.Spec = "Circle of the Land";
+      }
       break;
     case 5:
       character.Class = "Fighter";
+      var roll=Math.floor((Math.random() * 3)+1);
+      if (roll==1){
+        character.Spec = "Champion";
+      } else if (roll == 2){
+        character.Spec = "Battle Master";
+      } else {
+        character.Spec = "Eldritch Knight";
+      }
       break;
     case 6:
       character.Class = "Monk";
+     var roll=Math.floor((Math.random() * 3)+1);
+      if (roll==1){
+        character.Spec = "Way of the Open Hand";
+      } else if (roll == 2){
+        character.Spec = "Way of Shadow";
+      } else {
+        character.Spec = "Way of the Four Elements";
+      }
       break;
     case 7:
       character.Class = "Paladin";
+      var roll=Math.floor((Math.random() * 3)+1);
+      if (roll==1){
+        character.Spec = "Oath of Devotion";
+      } else if (roll == 2){
+        character.Spec = "Oath of the Ancients";
+      } else {
+        character.Spec = "Oath of Vengence";
+      }
       break;
     case 8:
       character.Class = "Ranger";
+       if (Math.floor((Math.random() * 2)+1)==1){
+        character.Spec = "Hunter";
+      } else {
+        character.Spec = "Beastmaster";
+      }
       break;
     case 9:
       character.Class = "Rogue";
-      break;
+        var roll=Math.floor((Math.random() * 4)+1);
+      if (roll==1){
+        character.Spec = "Thief";
+      } else if (roll == 2){
+        character.Spec = "Assassin";
+      }  else if (roll == 3){
+        character.Spec = "Swashbuckler";
+      } else {
+        character.Spec = "Arcane Trickster";
+      }
+    break;
     case 10:
       character.Class ="Sorcerer";
+       var roll=Math.floor((Math.random() * 3)+1);
+      if (roll==1){
+        character.Spec = "Draconic Bloodline";
+      } else if (roll == 2){
+        character.Spec = "Wild Magic";
+      } else {
+        character.Spec = "Storm Magic";
+      }
       break;
     case 11:
       character.Class ="Wizard";
+        var roll=Math.floor((Math.random() * 8)+1);
+      if (roll==1){
+        character.Spec = "Abjuration";
+      } else if (roll == 2){
+        character.Spec = "Conjuration";
+      } else if (roll == 3){
+        character.Spec = "Divination";
+      } else if (roll == 4){
+        character.Spec = "Enchantment";
+      } else if (roll == 5) {
+        character.Spec ="Evocation";
+      } else if (roll == 6) {
+        character.Spec = "Illusion";
+      } else if (roll == 7) {
+        character.Spec = "Necromancy";
+      } else {
+        character.Spec = "Transmutation";
+      }
       break;
     case 12:
       character.Class = "Warlock";
-}
+        var roll=Math.floor((Math.random() * 3)+1);
+      if (roll==1){
+        character.Spec = "Archfey Patron";
+      } else if (roll == 2){
+        character.Spec = "Fiend Patron";
+      } else {
+        character.Spec = "Great Old One Patron";
+      }
+    }
 
 //random background
+//specialization or variant rolled in
 switch(Math.floor((Math.random() * 13)+1)){
   case 1:
   character.Background = "Acolyte";
@@ -281,4 +388,4 @@ switch(Math.floor((Math.random() * 13)+1)){
 }
 
 //for now console.log, replace with return and call as a function in Full
-console.log("You are a"+" "+character.subRace+character.Race+" "+character.Class+" "+"whose background is"+" "+character.Background);
+console.log("I am a"+" "+character.subRace+character.Race+". "+"I fight as a"+" "+character.Spec+" "+character.Class+". "+"I was a"+" "+character.Background);
