@@ -408,5 +408,5 @@ switch(Math.floor((Math.random() * 13)+1)){
   break;
 }
 
-return("I am a"+" "+character.adj+" "+character.subRace+character.Race+". "+"I fight as a"+" "+character.Spec+" "+character.Class+". "+"I was a"+" "+character.Background);
+return character;
 }
