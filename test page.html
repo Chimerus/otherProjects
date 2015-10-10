@@ -39,6 +39,9 @@
       padding: 10px;
       border-radius: 8px;
     }
+    .noback{
+      background:none;
+    }
   </style>
    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -54,16 +57,87 @@
   <div>
     <p>This is one of my projects, a custom PC case! Click on the image above to take a look at the Instructable! <br>Below is another one, a D&D character generator!</p>
   </div>
- <button type="button">Click to generate a D&D character!</button>
-
+  <div class="noback">
+<button type="button" id="char">Generate a D&D character in pop-up!</button>
+<button type="button" id="stat">Generate a D&D stat array in pop-up!</button>
+<button type="button"  id="complete">Generate Character with Optimized Stats below! </button>
+  </div>
+  <div id="result" hidden: hidden>
+  </div>
  <script>
 //Run on page load
-   $(function () {
-      $("button").on("click", function () {
-      alert(charGen());
+  $(function () {
+  //Character Generator only
+    $("#char").on("click", function () {
+      var chars = charGen();
+      alert("I am a"+" "+chars.adj+" "+chars.subRace+chars.Race+". "+"I fight as a"+" "+chars.Spec+" "+chars.Class+". "+"I was a"+" "+chars.Background+".");
       });
-   });
-   
+    //Stat block Generator only
+    $("#stat").on("click", function () {
+     alert(statGen());
+      });
+    //The whole shebang, complete character with generally optimized stats.
+    $("#complete").on("click", function (){
+      var chars = charGen();
+      var stats = statGen();
+      var output = ("<p>I am a"+" "+chars.adj+" "+chars.subRace+chars.Race+". "+"I fight as a"+" "+chars.Spec+" "+chars.Class+". "+"I was a"+" "+chars.Background+"</p>");
+
+    //Optimize assignment of stats based upon class and subclass
+      switch(chars.Class){
+          case "Barbarian":
+          output += "<p>Strength: "+stats[5]+"<br>"+"Dexterity: "+stats[3]+"<br>"+"Constitution: "+stats[4]+"<br>"+"Intelligence: "+stats[1]+"<br>"+"Wisdom: "+stats[2]+"<br>"+"Charisma: "+stats[0]+"</p>";
+          break;
+          case "Bard":
+          if (chars.subclass == "College of Valor") {
+          output += "<p>Strength: "+stats[4]+"<br>"+"Dexterity: "+stats[2]+"<br>"+"Constitution: "+stats[3]+"<br>"+"Intelligence: "+stats[0]+"<br>"+"Wisdom: "+stats[1]+"<br>"+"Charisma: "+stats[5]+"</p>";}
+          else {
+          output += "<p>Strength: "+stats[2]+"<br>"+"Dexterity: "+stats[3]+"<br>"+"Constitution: "+stats[4]+"<br>"+"Intelligence: "+stats[0]+"<br>"+"Wisdom: "+stats[1]+"<br>"+"Charisma: "+stats[5]+"</p>";
+          }
+          break;
+          case "Cleric":
+          output += "<p>Strength: "+stats[3]+"<br>"+"Dexterity: "+stats[2]+"<br>"+"Constitution: "+stats[4]+"<br>"+"Intelligence: "+stats[1]+"<br>"+"Wisdom: "+stats[5]+"<br>"+"Charisma: "+stats[0]+"</p>";
+         break;
+          case "Druid":
+          if (chars.subclass == "Circle of the Land") {
+         output += "<p>Strength: "+stats[3]+"<br>"+"Dexterity: "+stats[2]+"<br>"+"Constitution: "+stats[4]+"<br>"+"Intelligence: "+stats[1]+"<br>"+"Wisdom: "+stats[5]+"<br>"+"Charisma: "+stats[0]+"</p>";}
+         else {output += "<p>Strength: "+stats[0]+"<br>"+"Dexterity: "+stats[1]+"<br>"+"Constitution: "+stats[4]+"<br>"+"Intelligence: "+stats[3]+"<br>"+"Wisdom: "+stats[5]+"<br>"+"Charisma: "+stats[2]+"</p>";}
+         break;
+         case "Fighter":
+         if (chars.subclass == "Eldritch Knight") {
+          output += "<p>Strength: "+stats[5]+"<br>"+"Dexterity: "+stats[1]+"<br>"+"Constitution: "+stats[3]+"<br>"+"Intelligence: "+stats[4]+"<br>"+"Wisdom: "+stats[2]+"<br>"+"Charisma: "+stats[0]+"</p>";}
+          else{output += "<p>Strength: "+stats[5]+"<br>"+"Dexterity: "+stats[2]+"<br>"+"Constitution: "+stats[4]+"<br>"+"Intelligence: "+stats[1]+"<br>"+"Wisdom: "+stats[3]+"<br>"+"Charisma: "+stats[0]+"</p>";}
+         break;
+          case "Monk":
+          output += "<p>Strength: "+stats[5]+"<br>"+"Dexterity: "+stats[5]+"<br>"+"Constitution: "+stats[3]+"<br>"+"Intelligence: "+stats[1]+"<br>"+"Wisdom: "+stats[4]+"<br>"+"Charisma: "+stats[0]+"</p>";
+          break;
+          case "Paladin":
+          output += "<p>Strength: "+stats[5]+"<br>"+"Dexterity: "+stats[0]+"<br>"+"Constitution: "+stats[3]+"<br>"+"Intelligence: "+stats[1]+"<br>"+"Wisdom: "+stats[2]+"<br>"+"Charisma: "+stats[4]+"</p>";
+          break;
+          case "Ranger":
+          output += "<p>Strength: "+stats[2]+"<br>"+"Dexterity: "+stats[5]+"<br>"+"Constitution: "+stats[3]+"<br>"+"Intelligence: "+stats[0]+"<br>"+"Wisdom: "+stats[4]+"<br>"+"Charisma: "+stats[1]+"</p>";
+          break;
+          case "Rogue":
+          if (chars.subclass == "Arcane Trickster") {
+          output += "<p>Strength: "+stats[0]+"<br>"+"Dexterity: "+stats[5]+"<br>"+"Constitution: "+stats[3]+"<br>"+"Intelligence: "+stats[4]+"<br>"+"Wisdom: "+stats[2]+"<br>"+"Charisma: "+stats[1]+"</p>";}
+          else {
+          output += "<p>Strength: "+stats[0]+"<br>"+"Dexterity: "+stats[5]+"<br>"+"Constitution: "+stats[4]+"<br>"+"Intelligence: "+stats[1]+"<br>"+"Wisdom: "+stats[3]+"<br>"+"Charisma: "+stats[2]+"</p>";}
+          break;
+          case "Sorcerer":
+          output += "<p>Strength: "+stats[0]+"<br>"+"Dexterity: "+stats[3]+"<br>"+"Constitution: "+stats[4]+"<br>"+"Intelligence: "+stats[1]+"<br>"+"Wisdom: "+stats[2]+"<br>"+"Charisma: "+stats[5]+"</p>";
+         break;
+         case "Warlock":
+          output += "<p>Strength: "+stats[1]+"<br>"+"Dexterity: "+stats[3]+"<br>"+"Constitution: "+stats[4]+"<br>"+"Intelligence: "+stats[0]+"<br>"+"Wisdom: "+stats[2]+"<br>"+"Charisma: "+stats[5]+"</p>";
+          break;
+          case "Wizard":
+          output += "<p>Strength: "+stats[0]+"<br>"+"Dexterity: "+stats[3]+"<br>"+"Constitution: "+stats[4]+"<br>"+"Intelligence: "+stats[5]+"<br>"+"Wisdom: "+stats[2]+"<br>"+"Charisma: "+stats[1]+"</p>";
+          break;
+          }
+
+        output+="<p>Racial Modifiers not included. Please see Player's Handbook for details.</p>"
+        $("#result").html(output);
+        $("#result").removeAttr("hidden");
+        });
+});   
  </script>
 </body>
 </html>

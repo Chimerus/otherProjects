@@ -9,8 +9,8 @@ for(var loop =0; loop<6; loop++){
     for(var idx=0; idx<4; idx++){
     stat.push(Math.floor((Math.random() * 6)+1));
     }
-  stat.sort();
 //drop the lowest
+  stat = stat.sort();
   stat.splice(0,1);
 //add them together
   var total=0;
@@ -20,5 +20,6 @@ for(var loop =0; loop<6; loop++){
   //add it to final array
   array.push(total);
 }
+array = array.sort(function(a, b){return a-b;});
 return array;
 }

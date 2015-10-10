@@ -1,5 +1,6 @@
 function charGen(){
 //A Quick DnD 5th edition Character generator
+//Race(and subrace) Class(and main path) & background
 var character = {};
 //random adjective, for fun
 var roll=Math.floor((Math.random() * 6)+1);
@@ -104,7 +105,6 @@ switch(Math.floor((Math.random() * 9)+1)){
       character.Race = "Tiefling"; 
       character.subRace ="";    
 }
-
 
 //random Class
 //adding Spec for main "path" of class, the big option they get.
@@ -406,7 +406,6 @@ switch(Math.floor((Math.random() * 13)+1)){
   case 13:
   character.Background = "Street Urchin";
   break;
-}
-
+  }
 return character;
 }
