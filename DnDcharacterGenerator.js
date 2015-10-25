@@ -1,5 +1,5 @@
-function charGen(){
 //A Quick DnD 5th edition Character generator
+function charGen(){
 //Race(and subrace) Class(and main path) & background
 var character = {};
 //random adjective, for fun

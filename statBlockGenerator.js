@@ -1,7 +1,7 @@
 function statGen() {
-  //generate a stat block by rolling 4d6
-  //adding highest 3 together, keeping that number
-  //doing that 6 times
+  /*generate a stat block by rolling 4d6
+    adding highest 3 together, keeping that number. 
+    Repeat that 6 times*/
 var array = [];
 for(var loop =0; loop<6; loop++){
     var stat = [];
