@@ -46,10 +46,18 @@
     video {
       border: 5px solid white;
     }
-    audio {
-      border: 5px dashed red;
-      border-radius: 10px;
-      padding:5px;
+
+    /*audio/img transition/animation*/
+    audio, #figtest > img {
+      transition:all 0.5s;
+    }
+    #figtest > img:hover {
+      box-shadow: 15px 15px 20px rgba(0,0,0,0.4);
+      transform: scale(1.05);
+    }
+    audio:hover, audio:focus, audio:active {
+      box-shadow: 15px rgba(0,0,0,0.4);
+      transform: scale(1.1);
     }
   </style>
    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
@@ -85,11 +93,16 @@
       Not supported by browser.
     </video>
   <p></p>
-    <p>Testing HTML audio.</p>
+    <p>Testing HTML audio, styling, and transforms.</p>
+    <figure id="figtest">
+      <img id="bat" width="400" src="http://img09.deviantart.net/8f8a/i/2012/142/d/6/hammers_of_justice_by_mariosix-d50qtt1.jpg"/>
+      <figcaption id="figcptiontest"> Press play to hear the Ballad of Batman!
     <audio controls="controls">
       <source src="The Ballad of Batman - Gray and Blue.mp3" />
       Not supported by browser.
     </audio>
+  </figcaption>
+</figure>
   </div>
  <script>
 //Run on page load
