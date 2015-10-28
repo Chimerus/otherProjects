@@ -32,6 +32,7 @@
       background: black;
       background: rgba(0,0,0,0.7);
       padding: 10px;
+      margin:5px;
       border-radius: 20px;
     }
     button{
@@ -66,8 +67,22 @@
   <div id="result" hidden: hidden>
   </div>
   <div>
-    <p>Testing embedding YouTube video</p>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/N8Sc5GLjBfA?rel=0" frameborder="0" allowfullscreen></iframe>
+    <p>Testing embedding YouTube video.</p>
+   <iframe width="420" height="315" src="https://www.youtube.com/embed/N8Sc5GLjBfA?rel=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div>
+    <p>Testing html embed video, NOT youtube code.</p>
+     <video width="480" height="320" controls="controls">
+      <source src="Taking Over Midnight.mp4" />
+      Not supported by browser.
+    </video>
+  </div>
+  <div>
+    <p>Testing HTML audio.</p>
+    <audio controls="controls">
+      <source src="The Ballad of Batman - Gray and Blue.mp3" />
+      Not supported by browser.
+    </audio>
   </div>
  <script>
 //Run on page load
