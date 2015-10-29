@@ -2,6 +2,7 @@
 <html lang ="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial scale=1.0">
   <title>Jason's Test Page</title>
   <style>
     body {
@@ -11,28 +12,21 @@
       font-family: helvetica;
       color: white;
       margin: 0 auto;
-      max-width: 600px;
+      max-width: 800px;
     }
     h1 {
-     font-size: 25px;
+     font-size: 5em;
     }
     p {
-      font-size: 16px;
+      font-family: "Garamond";
+      font-size: 20px;
       line-height: 30px;
       border: 0;
       padding: 0 5px;
-      
     }
     img {
       margin: 10px 0px 0px 10px;
       border: 7px solid white;
-      border-radius: 20px;
-    }
-    div{
-      background: black;
-      background: rgba(0,0,0,0.7);
-      padding: 10px;
-      margin:5px;
       border-radius: 20px;
     }
     button{
@@ -40,20 +34,49 @@
       padding: 10px;
       border-radius: 8px;
     }
-    .noback{
-      background:none;
+    .bubble {
+      background: black;
+      background: rgba(0,0,0,0.7);
+      padding: 10px;
+      margin:5px;
+      border-radius: 20px;
+    }
+    .wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /*16:9*/
+      padding-top: 25px;
+      height: 0;
+    }
+    .wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
     video {
       border: 5px solid white;
     }
-
+    @media (max-width: 500px){
+    h1 {
+      font-size:2em;
+    }
+    p {
+      font-size: 25px;
+      margin: 25px;
+    }
+    div {
+      margin: 15px;
+      padding: 10px;
+    }
+    }
     /*audio/img transition/animation*/
     audio, #figtest > img {
       transition:all 0.5s;
     }
     #figtest > img:hover {
       box-shadow: 15px 15px 20px rgba(0,0,0,0.4);
-      transform: scale(1.05);
+      transform: scale(1.25);
     }
     audio:hover, audio:focus, audio:active {
       box-shadow: 15px rgba(0,0,0,0.4);
@@ -67,38 +90,42 @@
 </head>
 <body>
   <img src="http://i.imgur.com/uwN531yb.jpg">
-  <div>
+  <div class="bubble">
     <h1><strong>Jason's test page</strong></h1>
   <p>This is a test page! Working on HTML/CSS/JS. <br>I have a couple of projects Im working on, like those below!</p>
   </div>
-  <a href="http://www.instructables.com/id/Portable-PC-project-inspired-by-Shadowrun-Cyberdec/"><img src="http://i.imgur.com/WZ8ACDem.jpg"></a>
-  <div>
-    <p>This is one of my projects, a custom PC case! Click on the image above to take a look at the Instructable! <br>Below is another one, a D&D character generator!</p>
+  <a href="http://www.instructables.com/id/Portable-PC-project-inspired-by-Shadowrun-Cyberdec/"><img src="http://i.imgur.com/WZ8ACDel.jpg" width="93%"></a>
+  <div class="bubble">
+    <p>This is one of my projects, a custom PC case!<br>Click on the image above to take a look at the Instructable! <br>Below is another one, a D&D character generator!</p>
   </div>
-  <div class="noback">
+  <!--Chose not to have transparent black bubble behind these buttons-->
+  <div>
 <button type="button" id="char">Generate a D&D character in pop-up!</button>
 <button type="button" id="stat">Generate a D&D stat array in pop-up!</button>
 <button type="button"  id="complete">Generate Character with Optimized Stats below! </button>
   </div>
-  <div id="result" hidden: hidden>
+  <div id="result" class="bubble" hidden: hidden>
   </div>
-  <div>
+  <div class="bubble">
     <h1>AV tests!</h1>
+    <p>EDIT: Now with dynamic rescaling!</p>
     <p>Testing embedding YouTube video.</p>
+    <div class="wrapper">
    <iframe width="420" height="315" src="https://www.youtube.com/embed/N8Sc5GLjBfA?rel=0" frameborder="0" allowfullscreen></iframe>
+ </div>
   <p></p>
     <p>Testing html embed video, NOT youtube code.</p>
-     <video width="480" height="320" controls="controls">
-      <source src="Taking Over Midnight.mp4" />
+     <video width="85%" height="85%" controls="controls">
+      <source src="C:\Users\Jason Chan\Videos\SHOWS\Gravity Falls\Taking Over Midnight.mp4" />
       Not supported by browser.
     </video>
   <p></p>
     <p>Testing HTML audio, styling, and transforms.</p>
     <figure id="figtest">
-      <img id="bat" width="400" src="http://img09.deviantart.net/8f8a/i/2012/142/d/6/hammers_of_justice_by_mariosix-d50qtt1.jpg"/>
-      <figcaption id="figcptiontest"> Press play to hear the Ballad of Batman!
+      <img id="bat" width="60%" src="http://img09.deviantart.net/8f8a/i/2012/142/d/6/hammers_of_justice_by_mariosix-d50qtt1.jpg"/>
+      <figcaption id="figcptiontest"> Press play to hear the Ballad of Batman!<br>
     <audio controls="controls">
-      <source src="The Ballad of Batman - Gray and Blue.mp3" />
+      <source src="C:\Users\Jason Chan\Music\The Ballad of Batman - Gray and Blue.mp3" />
       Not supported by browser.
     </audio>
   </figcaption>
