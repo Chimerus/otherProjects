@@ -82,6 +82,22 @@
       box-shadow: 15px rgba(0,0,0,0.4);
       transform: scale(1.1);
     }
+    /*changing icon using CSS pseudo class after*/
+    summary:after {
+      content: "+";
+      color: #FF00FF;
+      float: left;
+     font-size: 1.5em;
+      font-weight: bold;
+     margin: -5px 5px 0 0;
+      padding: 0;
+     text-align: center;
+      width: 20px;
+    }
+    details[open] summary:after {
+      content: "-";
+      color: #FFFFFF
+    }
   </style>
    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -130,6 +146,17 @@
     </audio>
   </figcaption>
 </figure>
+  </div>
+  <!--collapsingdetail/summary test-->
+  <div class="bubble">
+  <details>
+    <summary>
+      This is a summary!
+    </summary>
+    <p>This is a detail.</p>
+    <p>This one too!</p>
+    <p>And this one.</p>
+  </details>
   </div>
  <script>
 //Run on page load
