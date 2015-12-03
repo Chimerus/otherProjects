@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>GAHW</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+ <h1>GA HW submission form filler!<h1>
+ <script type="text/javascript">
+
+function submitHw () {
+  var name = "Jason Chan";
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1;
+  today = mm+'/'+dd;
+  var GAday = prompt("Which day hw is this?");
+  var link = prompt("Link to HW repo");
+  var complete = prompt("What part completed?");
+  var comfort = prompt("Comfort 1 to 5?");
+  var win = prompt("What felt good during the assignment?");
+  var challenge = prompt("What did you find the most challenging?");
+  var comment = prompt("Any other comments about this assignment?");
+  alert(name+" "+today+" "+" HW"+GAday+"\n \n"+"Completeness: "+ complete+"\n"+"Comfortability: "+comfort+"\n"+"Win: "+win+"\n"+"Challenge: "+challenge+"\n"+"Comments & Questions: "+comment)
+}
+submitHw();
+ </script>
+ <p>Note: Change var name to your name!</p>
+</body>
+</html>
