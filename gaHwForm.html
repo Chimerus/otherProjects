@@ -11,7 +11,7 @@
  <script type="text/javascript">
 
 function submitHw () {
-  var name = "Jason Chan";
+  var name = prompt("What's your name?");
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth()+1;
@@ -25,8 +25,8 @@ function submitHw () {
   var comment = prompt("Any other comments about this assignment?");
   alert(name+" "+today+" "+" HW"+GAday+"\n \n"+"Completeness: "+ complete+"\n"+"Comfortability: "+comfort+"\n"+"Win: "+win+"\n"+"Challenge: "+challenge+"\n"+"Comments & Questions: "+comment)
 }
-submitHw();
+ 
+ submitHw();
  </script>
- <p>Note: Change var name to your name!</p>
 </body>
 </html>
