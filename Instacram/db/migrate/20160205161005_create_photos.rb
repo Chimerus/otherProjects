@@ -1,0 +1,13 @@
+class CreatePhotos < ActiveRecord::Migration
+  def change
+    create_table :photos do |t|
+      t.string :name
+      t.text :description
+      t.integer :width
+      t.integer :height
+      t.string :format
+
+      t.timestamps null: false
+    end
+  end
+end
