@@ -6,7 +6,8 @@ class MapsController < ApplicationController
   def index
     # put your google maps key in your own env.
     @key = ENV['MAPS_KEY']
-    # set the origin, pull from location?
+    # set the origin, pull from location.
+    # "40.740082199999996,-73.9897896" this format for gps coordinates, no space!
     @origin = 'Chicago'
     #set the destination, pull from database.
     @destination = "San Francisco"
