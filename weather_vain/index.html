@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Vain</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css">
+  <link rel="stylesheet" href="stylesheets/pure.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+<div class="top">
+  <p class="prompt">What city are you interested in, weather lover?</p>
+</div>
+  <form class="pure-form">
+    <input type="text" class="pure-input-rounded">
+    <button type="submit" class="solo pure-button">Forecast</button>
+  <button type="submit" class="fiver pure-button">Penta-cast me!</button>
+  </form>
+  <h2 id="fore"></h2>
+  <p id="forecast" class="zoom"></p>
+
+  <p class="date" class="zoom"></p>
+
+  <div class="fiveDay">
+  <h2 id="title"></h2>
+  <p id="fivefore" class="zoom"></p>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="scripts/moment.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
