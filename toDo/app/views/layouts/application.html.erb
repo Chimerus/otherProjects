@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ToDo</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!-- our angular app -->
+<div class="container">
+
+<body ng-app="ToDoApp" ng-controller="task">
+  <h1>To Do List</h1>
+  <!-- 2 way data binding -->
+  Task: <input type="text" ng-model="thing"><br>
+  Description: <input type="text" ng-model="description"><br>
+  <input type="text" ng-model="done" hidden >
+
+  <button ng-click="addListItem()">Add To List</button>
+<!-- for variable in list it duplicates div-->
+
+  <ul>
+    <li ng-repeat="item in list">
+    <h2>Task: {{ item.thing }}</h2> 
+    Edit: <input type="checkbox" ng-model="edit" aria-label="Toggle ngShow">
+    <div ng-show="edit"> <input type="text" ng-model="item.thing"></div>
+    Show description: <input type="checkbox" ng-model="check" aria-label="Toggle ngShow">
+    <h3 ng-show="check"> Description: {{ item.description }} </h3>
+    Edit: <input type="checkbox" ng-model="edit2" aria-label="Toggle ngShow">
+    <div ng-show="edit2"><input type="text" ng-model="item.description"></div>
+     <br><button ng-click="isdone(true, item)">Done</button>  <button ng-click="delete($index)">delete</button> 
+    </li>
+  </ul>
+
+  </div>
+
+<%= yield %>
+
+</body>
+</html>
