@@ -1,0 +1,12 @@
+{
+  "name": "NYCsubwaystopper",
+  "version": "1.0.0",
+  "description": "![Union Square signage](https://upload.wikimedia.org/wikipedia/commons/1/14/NYC_subway_Union_Square_49.JPG)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason",
+  "license": "ISC"
+}
