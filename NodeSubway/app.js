@@ -1,7 +1,9 @@
+// The Requires 
 var LLine = require("./lines").LLine;
 var NLine = require("./lines").NLine;
 var SixLine = require("./lines").SixLine;
 
+// Specific instances of the lines
 var el = new LLine;
 var en = new NLine;
 var six = new SixLine;
@@ -37,7 +39,7 @@ if (process.argv[2] == "calculate") {
   } else {
   var enterLine;
   var exitLine;
-
+  // Determine stops & lines
   switch (process.argv[3]) {
     case "L":
       enterLine = el;

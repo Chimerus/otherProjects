@@ -1,3 +1,4 @@
+// List of Lines and Stops on each line
 var LLine = function(){
   this.name = "L";
   this.stops = ["8th", "6th", "unionSquare", "3rd", "1st"];
@@ -13,6 +14,7 @@ var SixLine = function(){
   this.stops = ["grandCentral", "33rd", "28th", "23rd", "unionSquare", "astorPlace"];
 };
 
+// export it so other things can use it
 module.exports.NLine = NLine;
 module.exports.LLine = LLine;
 module.exports.SixLine = SixLine;
