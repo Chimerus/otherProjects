@@ -6,4 +6,10 @@ class MasterController < ApplicationController
   def projects
     render :projects
   end
+
+  def show
+    @project = Project.find(params[:id])
+    render :show
+  end
+  
 end

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'master#index'
 
   get '/projects' => 'master#projects'
+  get '/projects/:id' => 'master#show'
+
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
 end
