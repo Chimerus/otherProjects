@@ -11,5 +11,13 @@ class MasterController < ApplicationController
     @project = Project.find(params[:id])
     render :show
   end
+
+  def about
+    render :about
+  end  
+
+  def contact
+    render :contact
+  end
   
 end

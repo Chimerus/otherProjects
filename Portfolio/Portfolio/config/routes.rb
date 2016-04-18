@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get '/projects' => 'master#projects'
   get '/projects/:id' => 'master#show'
 
+  get 'about' => 'master#about'
+
+  get 'contact' => 'master#contact'
+
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
 end
