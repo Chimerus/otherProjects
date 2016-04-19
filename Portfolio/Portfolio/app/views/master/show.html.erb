@@ -1,7 +1,25 @@
 <div id="main-container" class="container">
 <h2><%= @project.name %></h1>
-<a href="<%= @project.link %>" target="_blank" title="<%= @project.name %>"><img src="<%= @project.img %>" width="460" height="345" class="carry" alt="Picture of: <%= @project.name %>"></a>
-<h3><%= @project.tech %></h3>
+<a href="<%= @project.link %>" target="_blank" title="<%= @project.name %>"><img src="<%= @project.img %>" width="360" height="245" class="carry" alt="Picture of: <%= @project.name %>"></a>
+<h3>Main Technologies used: <%= @project.tech %></h3>
 <p><%= @project.description %></p>
 <a href="<%= @project.link %>" target="_blank" title="<%= @project.name %>">Link to live version: <%= @project.name %> </a>
 </div>
+
+<!-- Workaround to highlight active tab -->
+<script>
+$(".tab").removeClass("active")
+  switch ($(".whereAmI").text()) {
+    case "index":
+      $(".index").addClass("active")
+      break;
+    case "projects":
+      $(".projects").addClass("active")
+      break;
+    case "about":
+      $(".about").addClass("active")
+      break;
+    case "contact":
+      $(".contact").addClass("active")
+};
+</script>

@@ -4,7 +4,7 @@
     <title>Portfolio</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   </head>
@@ -25,14 +25,16 @@
     <!-- Hamburger menu! -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      <li><a href="/">Home</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact Me</a></li>
+      <li><a href="/" class="tab index">Home</a></li>
+        <li><a href="/projects" class="tab projects">Projects</a></li>
+        <li><a href="/about" class="tab about">About</a></li>
+        <li><a href="/contact" class="tab contact">Contact Me</a></li>
   </div>
 </nav>
     
   </div>
     <%= yield %>
   </body>
+  <!-- change highlighted tab to current location -->
+  <div hidden class="whereAmI"><%=@where%></div>
 </html>

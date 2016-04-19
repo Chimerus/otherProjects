@@ -18,6 +18,9 @@
 @import "bootstrap"
 
 $primary-color: #B52F2F
+$secondary-color: #F1C175
+$tertiary-color: #115B74
+ 
 
 .carry 
   margin: auto
@@ -25,8 +28,17 @@ $primary-color: #B52F2F
 .navbar-default 
   background-color: $primary-color
 
-.navbar-default .navbar-brand
-  color: black
+.navbar-default 
+  .navbar-brand
+    color: black
+    font-family: 'Bangers', 'Helvetica Neue', Helvetica, Arial, sans-serif
+  .navbar-brand:hover
+    color: black
 
-.navbar-default .navbar-nav > li > a
-  color: black
+.navbar-default .navbar-nav > li
+  a
+    color: black
+  a:hover 
+    color: $tertiary-color
+  a.active
+    background-color: $secondary-color

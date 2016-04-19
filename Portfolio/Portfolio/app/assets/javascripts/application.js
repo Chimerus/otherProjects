@@ -14,13 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require script.js
 //= require_tree .
-
-// should change tab to active when clicked
-$('.nav li a').click(function(e) {
-  var $this = $(this);
-  if (!$this.hasClass('active')) {
-    $this.addClass('active');
-  }
-  e.preventDefault();
-});
