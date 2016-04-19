@@ -1,9 +1,13 @@
 <div id="main-container" class="container">
-<h2><%= @project.name %></h1>
-<a href="<%= @project.link %>" target="_blank" title="<%= @project.name %>"><img src="<%= @project.img %>" width="360" height="245" class="carry" alt="Picture of: <%= @project.name %>"></a>
-<h3>Main Technologies used: <%= @project.tech %></h3>
-<p><%= @project.description %></p>
-<a href="<%= @project.link %>" target="_blank" title="<%= @project.name %>">Link to live version: <%= @project.name %> </a>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h2><%= @project.name %></h2>
+      <a href="<%= @project.link %>" target="_blank" title="<%= @project.name %>"><img src="<%= @project.img %>" width="360" height="245" class="carry" alt="Picture of: <%= @project.name %>"></a>
+      <h3>Main Technologies used: <%= @project.tech %></h3> <br>
+      <p><%= @project.description %></p>
+      <a href="<%= @project.link %>" target="_blank" title="<%= @project.name %>">Link to live version: <%= @project.name %> </a>
+    </div>
+  </div>
 </div>
 
 <!-- Workaround to highlight active tab -->
