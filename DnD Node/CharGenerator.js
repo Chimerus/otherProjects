@@ -1,253 +1,253 @@
-//A Quick DnD 5th edition this.Character generator
+//A Quick DnD 5th edition Character generator
 //Now Node-ing it!
 var charGen = function(){
 //Race(and subrace) Class(and main path) & background
- this.character = {};
+var character = {};
 //random adjective, for fun
 var roll=Math.floor((Math.random() * 6)+1);
 switch(roll){
     case 1:
-      this.character.adj = "Fearless";
+      character.adj = "Fearless";
       break;
     case 2:
-      this.character.adj = "Eloquent";
+      character.adj = "Eloquent";
       break;
     case 3:
-      this.character.adj = "Cunning";
+      character.adj = "Cunning";
       break;
     case 4:
-      this.character.adj = "Friendly";
+      character.adj = "Friendly";
       break;
     case 5:
-      this.character.adj = "Stoic";
+      character.adj = "Stoic";
       break;
     case 6:
-      this.character.adj = "Reckless";
+      character.adj = "Reckless";
     }
 //random Race, subRace has extra space after it so it prints properly
 //subrace seperated out so can be expanded on in future
 switch(Math.floor((Math.random() * 9)+1)){
     case 1:
-      this.character.Race = "Dwarf";
+      character.Race = "Dwarf";
       if (Math.floor((Math.random() * 2)+1)==1){
-        this.character.subRace = "Mountain ";
+        character.subRace = "Mountain ";
       } else {
-        this.character.subRace = "Hill ";
+        character.subRace = "Hill ";
       }
       break;
     case 2:
-      this.character.Race = "Elf";
+      character.Race = "Elf";
           roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
-        this.character.subRace = "High ";
+        character.subRace = "High ";
       } else if (roll == 2){
-        this.character.subRace = "Wood ";
+        character.subRace = "Wood ";
       } else {
-        this.character.subRace = "Drow ";
+        character.subRace = "Drow ";
       }
       break;
     case 3:
-      this.character.Race = "Halfling";
+      character.Race = "Halfling";
       if (Math.floor((Math.random() * 2)+1)==1){
-        this.character.subRace = "Lightfoot ";
+        character.subRace = "Lightfoot ";
       } else {
-        this.character.subRace = "Stout ";
+        character.subRace = "Stout ";
       }
       break;
     case 4:
-      this.character.Race = "Human";
-      this.character.subRace ="";
+      character.Race = "Human";
+      character.subRace ="";
       break;
     case 5:
-      this.character.Race = "Dragonborn";
+      character.Race = "Dragonborn";
          roll=Math.floor((Math.random() * 10)+1);
       if (roll==1){
-        this.character.subRace = "Black ";
+        character.subRace = "Black ";
       } else if (roll == 2){
-        this.character.subRace = "Blue ";
+        character.subRace = "Blue ";
       } else if (roll == 3){
-        this.character.subRace = "Brass ";
+        character.subRace = "Brass ";
       } else if (roll == 4){
-        this.character.subRace = "Bronze ";
+        character.subRace = "Bronze ";
       } else if (roll == 5) {
-        this.character.subRace ="Copper ";
+        character.subRace ="Copper ";
       } else if (roll == 6) {
-        this.character.subRace = "Gold ";
+        character.subRace = "Gold ";
       } else if (roll == 7) {
-        this.character.subRace = "Green ";
+        character.subRace = "Green ";
       } else if (roll == 8) {
-        this.character.subRace = "Red ";
+        character.subRace = "Red ";
       } else if (roll == 9) {
-        this.character.subRace = "Silver ";
+        character.subRace = "Silver ";
       } else {
-        this.character.subRace = "White ";
+        character.subRace = "White ";
       }
       break;
     case 6:
-      this.character.Race = "Gnome";
+      character.Race = "Gnome";
          roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
-        this.character.subRace = "Tinker ";
+        character.subRace = "Tinker ";
       } else if (roll == 2){
-        this.character.subRace = "Forest ";
+        character.subRace = "Forest ";
       } else {
-        this.character.subRace = "Rock ";
+        character.subRace = "Rock ";
       }
       break;
     case 7:
-      this.character.Race = "Half-Elf";
-      this.character.subRace ="";
+      character.Race = "Half-Elf";
+      character.subRace ="";
       break;
     case 8:
-      this.character.Race = "Half-Orc";
-      this.character.subRace ="";
+      character.Race = "Half-Orc";
+      character.subRace ="";
       break;
     case 9:
-      this.character.Race = "Tiefling"; 
-      this.character.subRace ="";    
+      character.Race = "Tiefling"; 
+      character.subRace ="";    
 }
 
 //random Class
 //adding Spec for main "path" of class, the big option they get.
 switch(Math.floor((Math.random() * 12)+1)){
     case 1:
-      this.character.Class= "Barbarian";
+      character.Class= "Barbarian";
          if (Math.floor((Math.random() * 2)+1)==1){
-        this.character.Spec = "Path of the Berserker";
+        character.Spec = "Path of the Berserker";
       } else {
-        this.character.Spec = "Path of the Totem Warrior";
+        character.Spec = "Path of the Totem Warrior";
       }
       break;
     case 2:
-      this.character.Class = "Bard";
+      character.Class = "Bard";
          if (Math.floor((Math.random() * 2)+1)==1){
-        this.character.Spec = "College of Valor";
+        character.Spec = "College of Valor";
       } else {
-        this.character.Spec = "College of Lore";
+        character.Spec = "College of Lore";
       }
       break;
     case 3:
-      this.character.Class = "Cleric";
+      character.Class = "Cleric";
            roll=Math.floor((Math.random() * 7)+1);
           if (roll==1){
-        this.character.Spec = "Knowledge Domain";
+        character.Spec = "Knowledge Domain";
       } else if (roll == 2){
-        this.character.Spec = "Life Domain";
+        character.Spec = "Life Domain";
       } else if (roll == 3){
-        this.character.Spec = "Light Domain";
+        character.Spec = "Light Domain";
       } else if (roll == 4){
-        this.character.Spec = "Nature Domain";
+        character.Spec = "Nature Domain";
       } else if (roll == 5) {
-        this.character.Spec ="Tempest Domain";
+        character.Spec ="Tempest Domain";
       } else if (roll == 6) {
-        this.character.Spec = "Trickery Domain";
+        character.Spec = "Trickery Domain";
       } else {
-        this.character.Spec = "War Domain";
+        character.Spec = "War Domain";
       }
       break;
     case 4:
-      this.character.Class = "Druid";
+      character.Class = "Druid";
       if (Math.floor((Math.random() * 2)+1)==1){
-        this.character.Spec = "Circle of the Moon";
+        character.Spec = "Circle of the Moon";
       } else {
-        this.character.Spec = "Circle of the Land";
+        character.Spec = "Circle of the Land";
       }
       break;
     case 5:
-      this.character.Class = "Fighter";
+      character.Class = "Fighter";
          roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
-        this.character.Spec = "Champion";
+        character.Spec = "Champion";
       } else if (roll == 2){
-        this.character.Spec = "Battle Master";
+        character.Spec = "Battle Master";
       } else {
-        this.character.Spec = "Eldritch Knight";
+        character.Spec = "Eldritch Knight";
       }
       break;
     case 6:
-      this.character.Class = "Monk";
+      character.Class = "Monk";
         roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
-        this.character.Spec = "Way of the Open Hand";
+        character.Spec = "Way of the Open Hand";
       } else if (roll == 2){
-        this.character.Spec = "Way of Shadow";
+        character.Spec = "Way of Shadow";
       } else {
-        this.character.Spec = "Way of the Four Elements";
+        character.Spec = "Way of the Four Elements";
       }
       break;
     case 7:
-      this.character.Class = "Paladin";
+      character.Class = "Paladin";
          roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
-        this.character.Spec = "Oath of Devotion";
+        character.Spec = "Oath of Devotion";
       } else if (roll == 2){
-        this.character.Spec = "Oath of the Ancients";
+        character.Spec = "Oath of the Ancients";
       } else {
-        this.character.Spec = "Oath of Vengence";
+        character.Spec = "Oath of Vengence";
       }
       break;
     case 8:
-      this.character.Class = "Ranger";
+      character.Class = "Ranger";
        if (Math.floor((Math.random() * 2)+1)==1){
-        this.character.Spec = "Hunter";
+        character.Spec = "Hunter";
       } else {
-        this.character.Spec = "Beastmaster";
+        character.Spec = "Beastmaster";
       }
       break;
     case 9:
-      this.character.Class = "Rogue";
+      character.Class = "Rogue";
            roll=Math.floor((Math.random() * 4)+1);
       if (roll==1){
-        this.character.Spec = "Thief";
+        character.Spec = "Thief";
       } else if (roll == 2){
-        this.character.Spec = "Assassin";
+        character.Spec = "Assassin";
       }  else if (roll == 3){
-        this.character.Spec = "Swashbuckler";
+        character.Spec = "Swashbuckler";
       } else {
-        this.character.Spec = "Arcane Trickster";
+        character.Spec = "Arcane Trickster";
       }
     break;
     case 10:
-      this.character.Class ="Sorcerer";
+      character.Class ="Sorcerer";
           roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
-        this.character.Spec = "Draconic Bloodline";
+        character.Spec = "Draconic Bloodline";
       } else if (roll == 2){
-        this.character.Spec = "Wild Magic";
+        character.Spec = "Wild Magic";
       } else {
-        this.character.Spec = "Storm Magic";
+        character.Spec = "Storm Magic";
       }
       break;
     case 11:
-      this.character.Class ="Wizard";
+      character.Class ="Wizard";
            roll=Math.floor((Math.random() * 8)+1);
       if (roll==1){
-        this.character.Spec = "Abjuration";
+        character.Spec = "Abjuration";
       } else if (roll == 2){
-        this.character.Spec = "Conjuration";
+        character.Spec = "Conjuration";
       } else if (roll == 3){
-        this.character.Spec = "Divination";
+        character.Spec = "Divination";
       } else if (roll == 4){
-        this.character.Spec = "Enchantment";
+        character.Spec = "Enchantment";
       } else if (roll == 5) {
-        this.character.Spec ="Evocation";
+        character.Spec ="Evocation";
       } else if (roll == 6) {
-        this.character.Spec = "Illusion";
+        character.Spec = "Illusion";
       } else if (roll == 7) {
-        this.character.Spec = "Necromancy";
+        character.Spec = "Necromancy";
       } else {
-        this.character.Spec = "Transmutation";
+        character.Spec = "Transmutation";
       }
       break;
     case 12:
-      this.character.Class = "Warlock";
+      character.Class = "Warlock";
            roll=Math.floor((Math.random() * 3)+1);
       if (roll==1){
-        this.character.Spec = "Archfey Patron";
+        character.Spec = "Archfey Patron";
       } else if (roll == 2){
-        this.character.Spec = "Fiend Patron";
+        character.Spec = "Fiend Patron";
       } else {
-        this.character.Spec = "Great Old One Patron";
+        character.Spec = "Great Old One Patron";
       }
 }
 
@@ -255,162 +255,162 @@ switch(Math.floor((Math.random() * 12)+1)){
 //specialization or variant rolled in
 switch(Math.floor((Math.random() * 13)+1)){
   case 1:
-  this.character.Background = "Acolyte";
+  character.Background = "Acolyte";
   break;
   case 2:
-  this.character.Background = "Charlatan";
+  character.Background = "Charlatan";
   break;
   case 3:
-  this.character.Background = "Criminal";
+  character.Background = "Criminal";
     roll=Math.floor((Math.random() * 8)+1);
     if (roll==1){
-        this.character.Background += "- Blackmailer";
+        character.Background += "- Blackmailer";
       } else if (roll == 2){
-        this.character.Background += "- Burglar";
+        character.Background += "- Burglar";
       } else if (roll == 3){
-        this.character.Background += "- Enforcer";
+        character.Background += "- Enforcer";
       } else if (roll == 4){
-        this.character.Background += "- Fence";
+        character.Background += "- Fence";
       } else if (roll == 5) {
-        this.character.Background += "- Highway Robber";
+        character.Background += "- Highway Robber";
       } else if (roll == 6) {
-        this.character.Background += "- Hired Killer";
+        character.Background += "- Hired Killer";
       } else if (roll == 7) {
-        this.character.Background += "- Pickpocket";
+        character.Background += "- Pickpocket";
       } else {
-        this.character.Background += "- Smuggler";
+        character.Background += "- Smuggler";
       }
   break;
   case 4:
       if (Math.floor((Math.random() * 2)+1)==1){
-        this.character.Background = "Entertainer";   
+        character.Background = "Entertainer";   
          roll=Math.floor((Math.random() * 10)+1);
       if (roll==1){
-        this.character.Background += "- Actor";
+        character.Background += "- Actor";
       } else if (roll == 2){
-        this.character.Background += "- Dancer";
+        character.Background += "- Dancer";
       } else if (roll == 3){
-        this.character.Background += "- Fire-eater";
+        character.Background += "- Fire-eater";
       } else if (roll == 4){
-        this.character.Background += "- Jester";
+        character.Background += "- Jester";
       } else if (roll == 5) {
-        this.character.Background += "- Juggler";
+        character.Background += "- Juggler";
       } else if (roll == 6) {
-        this.character.Background += "- Instrumentalist";
+        character.Background += "- Instrumentalist";
       } else if (roll == 7) {
-        this.character.Background += "- Poet";
+        character.Background += "- Poet";
       } else if (roll == 8) {
-        this.character.Background += "- Singer";
+        character.Background += "- Singer";
       } else if (roll == 9) {
-        this.character.Background += "- Storyteller";
+        character.Background += "- Storyteller";
       } else {
-        this.character.Background += "- Tumbler";
+        character.Background += "- Tumbler";
         }
       } else {
-        this.character.Background = "Gladiator ";
+        character.Background = "Gladiator ";
       }
   break;
   case 5:
-  this.character.Background = "Folk Hero";
+  character.Background = "Folk Hero";
   break;
   case 6:
   if (Math.floor((Math.random() * 2)+1)==1){
-        this.character.Background = "Guild Artisan";
+        character.Background = "Guild Artisan";
       } else {
-         this.character.Background = "Guild Merchant";
+         character.Background = "Guild Merchant";
       }
   break;
   case 7:
-    this.character.Background = "Hermit";
+    character.Background = "Hermit";
   break;
   case 8:
     if (Math.floor((Math.random() * 2)+1)==1){
-        this.character.Background = "Noble";
+        character.Background = "Noble";
       } else {
-        this.character.Background = "Knight";
+        character.Background = "Knight";
       }
   break;
   case 9:
-    this.character.Background = "Outlander";
+    character.Background = "Outlander";
        roll=Math.floor((Math.random() * 10)+1);
       if (roll==1){
-        this.character.Background += "- Forester";
+        character.Background += "- Forester";
       } else if (roll == 2){
-        this.character.Background += "- Trapper";
+        character.Background += "- Trapper";
       } else if (roll == 3){
-        this.character.Background += "- Homesteader";
+        character.Background += "- Homesteader";
       } else if (roll == 4){
-        this.character.Background += "- Guide";
+        character.Background += "- Guide";
       } else if (roll == 5) {
-        this.character.Background += "- Exile/Outcast";
+        character.Background += "- Exile/Outcast";
       } else if (roll == 6) {
-        this.character.Background += "- Bounty Hunter";
+        character.Background += "- Bounty Hunter";
       } else if (roll == 7) {
-        this.character.Background += "- Pilgrim";
+        character.Background += "- Pilgrim";
       } else if (roll == 8) {
-        this.character.Background += "- Tribal Nomad";
+        character.Background += "- Tribal Nomad";
       } else if (roll == 9) {
-        this.character.Background += "- Hunter-Gatherer";
+        character.Background += "- Hunter-Gatherer";
       } else {
-        this.character.Background += "- Tribal Marauder";
+        character.Background += "- Tribal Marauder";
         }
   break;  
   case 10:
-  this.character.Background = "Sage";
+  character.Background = "Sage";
       roll=Math.floor((Math.random() * 8)+1);
       if (roll==1){
-        this.character.Background += "- Alchemist";
+        character.Background += "- Alchemist";
       } else if (roll == 2){
-        this.character.Background += "- Astronomer";
+        character.Background += "- Astronomer";
       } else if (roll == 3){
-        this.character.Background += "- Discredited Academic";
+        character.Background += "- Discredited Academic";
       } else if (roll == 4){
-        this.character.Background += "- Librarian";
+        character.Background += "- Librarian";
       } else if (roll == 5) {
-        this.character.Background += "- Professor";
+        character.Background += "- Professor";
       } else if (roll == 6) {
-        this.character.Background += "- Researcher";
+        character.Background += "- Researcher";
       } else if (roll == 7) {
-        this.character.Background += "- Wizard's Apprentice";
+        character.Background += "- Wizard's Apprentice";
       } else {
-        this.character.Background += "- Scribe";
+        character.Background += "- Scribe";
       }
   break;
   case 11:
     if (Math.floor((Math.random() * 2)+1)==1){
-        this.character.Background = "Sailor";
+        character.Background = "Sailor";
       } else {
-         this.character.Background = "Pirate";
+         character.Background = "Pirate";
       }
   break;
   case 12:
-  this.character.Background = "Soldier";
+  character.Background = "Soldier";
       roll=Math.floor((Math.random() * 8)+1);
       if (roll==1){
-        this.character.Background += "- Officer";
+        character.Background += "- Officer";
       } else if (roll == 2){
-        this.character.Background += "- Scout";
+        character.Background += "- Scout";
       } else if (roll == 3){
-        this.character.Background += "- Infantry";
+        character.Background += "- Infantry";
       } else if (roll == 4){
-        this.character.Background += "- Calvary";
+        character.Background += "- Calvary";
       } else if (roll == 5) {
-        this.character.Background += "- Healer";
+        character.Background += "- Healer";
       } else if (roll == 6) {
-        this.character.Background += "- Quartermaster";
+        character.Background += "- Quartermaster";
       } else if (roll == 7) {
-        this.character.Background += "- Standard Bearer";
+        character.Background += "- Standard Bearer";
       } else {
-        this.character.Background += "- Support Staff (cook,blacksmith,etc.)";
+        character.Background += "- Support Staff (cook,blacksmith,etc.)";
       }
   break;
   case 13:
-  this.character.Background = "Street Urchin";
+  character.Background = "Street Urchin";
   break;
   }
 // The final product! 
-// this.this.character = this.character;
-return this.character;
+this.character = character;
+// return character;
 }();
 
 // Export it so other things can use it
