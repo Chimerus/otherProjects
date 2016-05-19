@@ -4,8 +4,8 @@ var statGen = require('./statBlockGen.js').statGen
 
 // Make an instance
 // hmm some trouble with chargen.
-// var rookie = new charGen;
-// console.log(rookie.Race);
+var rookie = new charGen;
+console.log(rookie.rando);
 
 // statgen seems to work fine
 var statblock = new statGen;

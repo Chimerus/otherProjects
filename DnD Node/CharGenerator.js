@@ -409,7 +409,7 @@ switch(Math.floor((Math.random() * 13)+1)){
   break;
   }
 // The final product! 
-this.character = character;
+this.rando = character;
 // return character;
 }();
 

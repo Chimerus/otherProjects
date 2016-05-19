@@ -1,0 +1,12 @@
+{
+  "name": "DNodeD",
+  "version": "1.0.0",
+  "description": "DnD Character Generator in Node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason",
+  "license": "ISC"
+}
